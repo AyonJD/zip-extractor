@@ -1,4 +1,5 @@
 import './App.css';
+import logo from './assets/archive-logo.png'
 
 function App() {
 
@@ -73,10 +74,96 @@ function App() {
     "zi",
     "jar",
   ];
-  
-  return (
-    <div>
 
+  return (
+    <div className="h-screen">
+      <div className="container lg:w-1/2 mx-auto" id="container">
+        <div className="header-text py-10">
+          <h1 className="text-3xl font-bold text-center flex justify-center items-center">
+            <img
+              src={logo}
+              alt=""
+              className="w-20 mr-3"
+            />
+            Online Extractor
+          </h1>
+          <p className="text-center md:w-72 mx-auto mt-5">
+            Online Extractor is a web application that allows you to extract nearly any file format(60+) what is archived in a variety of ways.
+          </p>
+        </div>
+
+        <div>
+          <div
+            className={`mx-auto bg-white w-3/4 py-20 border border-1 rounded`}
+            id="fileSection"
+          >
+            <div id="upload-section" className="text-center">
+              <button
+                type="file"
+                className="bg-blue-600 text-white px-16 py-3 rounded-md"
+              >
+                <div className="text-xl">Choose File</div>
+                <small className="text-light">From Your Computer</small>
+              </button>
+            </div>
+
+            <div
+              id="online-storages-container"
+              className="text-center flex justify-center gap-4 my-3"
+            >
+              <span
+                id="gDrive"
+                className="hover:text-blue-500 hover:underline flex items-center gap-2 cursor-pointer"
+              >
+                <div className="gdrive-icon"></div>Google Drive
+              </span>
+              <a href="g" className="hover:text-blue-500 hover:underline">
+                <i class="fa-brands fa-dropbox"></i> Dropbox
+              </a>
+              <span
+                href="g"
+                className="hover:text-blue-500 hover:underline flex items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-link text-slate-700 hover:text-slate-900"></i>{" "}
+                URL
+              </span>
+            </div>
+
+            <div className="flex justify-center">
+              <div id="drop_zone demo">
+                <input
+                  type="file"
+                  id="file"
+                  onClick={(e) => e.preventDefault()}
+                  className="custom-file-input"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="details-section">
+          <h1 className="text=2xl font-bold">Name: Example</h1>
+          <h1 className="text=2xl font-bold">
+            Size: Example
+          </h1>
+        </div>
+      </div>
+
+      <div
+        id="errorSection"
+        className="mt-5 flex items-center justify-center"
+      >
+        <h1 className="text-2xl">
+          You have Selected Unsupported file format{" "}
+          <span
+            className="cursor-pointer text-blue-500 underline"
+            onClick={() => window.location.reload()}
+          >
+            Reload
+          </span>
+        </h1>
+      </div>
     </div>
   );
 }

@@ -1,38 +1,41 @@
-.App {
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.custom-file-input::before {
+  content: "Or Drag And Drop File Here";
   text-align: center;
+  font-style: italic;
+  width: 100%;
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border-radius: 3px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  font-size: 10pt;
+  font-style: italic;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.custom-file-input:-moz-drag-over::before {
+  border-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.custom-file-input {
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.gdrive-icon {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1051/1051300.png");
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#gDrive:hover .gdrive-icon {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/2295px-Google_Drive_icon_%282020%29.svg.png");
+  background-size: cover;
+  width: 17px;
+  height: 15px;
 }
