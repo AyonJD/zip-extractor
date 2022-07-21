@@ -1,23 +1,82 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const extensions = [
+    "7z",
+    "zipx",
+    "rar",
+    "tar",
+    "exe",
+    "dmg",
+    "iso",
+    "zip",
+    "msi",
+    "nrg",
+    "gz",
+    "cab",
+    "bz2",
+    "wim",
+    "ace",
+    "alz",
+    "ar",
+    "arc",
+    "arj",
+    "bin",
+    "cdi",
+    "chm",
+    "cpt",
+    "cpio",
+    "cramfs",
+    "crunch",
+    "deb",
+    "dd",
+    "dms",
+    "ext",
+    "fat",
+    "format",
+    "gpt",
+    "hfs",
+    "ihex",
+    "lbr",
+    "lzh",
+    "lzma",
+    "lzm",
+    "mbr",
+    "mdf",
+    "nsa",
+    "nds",
+    "nsis",
+    "ntfs",
+    "pit",
+    "pak",
+    "pdf",
+    "pp",
+    "qcow2",
+    "rpm",
+    "sar",
+    "squashfs",
+    "squeeze",
+    "sit",
+    "sitx",
+    "swf",
+    "udf",
+    "uefi",
+    "vdi",
+    "vhd",
+    "vmdk",
+    "warc",
+    "xar",
+    "xz",
+    "z",
+    "zoo",
+    "zi",
+    "jar",
+  ];
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
     </div>
   );
 }
