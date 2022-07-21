@@ -1,7 +1,11 @@
+import JSZip from 'jszip';
+import { useState } from 'react';
 import './App.css';
 import logo from './assets/archive-logo.png'
 
 function App() {
+  const [about, setAbout] = useState({});
+  const [details, setDetails] = useState();
 
   const extensions = [
     "7z",
@@ -75,6 +79,30 @@ function App() {
     "jar",
   ];
 
+  const handleUploads = (e) => {
+    if (
+      e?.name.includes(".zip") ||
+      e?.name.includes(".7z") ||
+      e?.name.includes(".dmg") ||
+      e?.name.includes(".zipx") ||
+      e?.name.includes(".rar") ||
+      e?.name.includes(".tar") ||
+      e?.name.includes(".exe")
+    ) {
+      setAbout(e);
+      JSZip.loadAsync(e).then((data) => {
+        setDetails(data.files);
+      });
+    } else {
+      document.getElementById("details-section").style.display = "block";
+      document.getElementById("container").style.display = "none";
+      document.getElementById("errorSection").style.display = "block";
+      document.getElementById("details-section").classList.add("text-rose-500");
+      document.getElementById("details-section").innerText =
+        "Unsupported File Format";
+    }
+  };
+
   return (
     <div className="h-screen">
       <div className="container lg:w-1/2 mx-auto" id="container">
@@ -132,6 +160,7 @@ function App() {
             <div className="flex justify-center">
               <div id="drop_zone demo">
                 <input
+                  onChange={(e) => handleUploads(e.target.files[0])}
                   type="file"
                   id="file"
                   onClick={(e) => e.preventDefault()}
